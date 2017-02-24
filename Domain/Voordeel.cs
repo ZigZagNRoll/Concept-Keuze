@@ -8,5 +8,7 @@ namespace Domain
 {
     class Voordeel
     {
+        public int VoordeelNummer { get; set; }
+        public string VoordeelTekst { get; set; }
     }
 }

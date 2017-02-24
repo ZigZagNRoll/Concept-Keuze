@@ -8,5 +8,8 @@ namespace Domain
 {
     class Nadeel
     {
+        public int NadeelNummer { get; set; }
+        public string NadeelTekst { get; set; }
+
     }
 }
