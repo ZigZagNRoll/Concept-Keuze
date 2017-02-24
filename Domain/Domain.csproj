@@ -40,7 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Antwoord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resultaat.cs" />
+    <Compile Include="Thema.cs" />
+    <Compile Include="Vraag.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
