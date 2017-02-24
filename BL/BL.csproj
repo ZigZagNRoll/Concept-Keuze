@@ -7,8 +7,8 @@
     <ProjectGuid>{9AE8F525-5764-4AC5-ADC6-BD7D848A251B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BL</RootNamespace>
-    <AssemblyName>BL</AssemblyName>
+    <RootNamespace>CK.BL</RootNamespace>
+    <AssemblyName>CK.BL</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
