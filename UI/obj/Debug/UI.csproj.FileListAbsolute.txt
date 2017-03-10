@@ -11,11 +11,7 @@ C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\roslyn\System.Reflection.Metada
 C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\roslyn\vbc.exe
 C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\roslyn\VBCSCompiler.exe
 C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\UI.dll.config
-C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\UI.dll
-C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\UI.pdb
 C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\Antlr3.Runtime.dll
-C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\Domain.dll
 C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\EntityFramework.dll
 C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\EntityFramework.SqlServer.dll
 C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\Microsoft.AI.Agent.Intercept.dll
@@ -49,7 +45,6 @@ C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\System.Web.WebPages.Deployment.
 C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\System.Web.WebPages.dll
 C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\System.Web.WebPages.Razor.dll
 C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\WebGrease.dll
-C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\Domain.pdb
 C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\Microsoft.AI.DependencyCollector.xml
 C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\Microsoft.AI.Web.xml
@@ -80,5 +75,10 @@ C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\Microsoft.Owin.Security.Google.
 C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
-C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\obj\Debug\UI.dll
-C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\obj\Debug\UI.pdb
+C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\CK.UI.dll.config
+C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\CK.UI.dll
+C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\CK.UI.pdb
+C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\CK.BL.Domain.dll
+C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\bin\CK.BL.Domain.pdb
+C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\obj\Debug\CK.UI.dll
+C:\Users\Lukas\Source\Repos\Concept-Keuze\UI\obj\Debug\CK.UI.pdb

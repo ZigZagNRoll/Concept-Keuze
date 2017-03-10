@@ -10,8 +10,6 @@ namespace CK.BL.Domain
     {
         public int VraagNummer { get; set; }
         public string VraagTekst { get; set; }
-        public Thema Thema { get; set; }
-
         public ICollection<Keuze> Antwoorden { get; set; }
     }
 }

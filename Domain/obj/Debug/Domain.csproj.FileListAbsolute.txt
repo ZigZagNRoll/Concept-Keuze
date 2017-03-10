@@ -1,5 +1,5 @@
-C:\Users\Lukas\Source\Repos\Concept-Keuze\Domain\bin\Debug\Domain.dll
-C:\Users\Lukas\Source\Repos\Concept-Keuze\Domain\bin\Debug\Domain.pdb
 C:\Users\Lukas\Source\Repos\Concept-Keuze\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
-C:\Users\Lukas\Source\Repos\Concept-Keuze\Domain\obj\Debug\Domain.dll
-C:\Users\Lukas\Source\Repos\Concept-Keuze\Domain\obj\Debug\Domain.pdb
+C:\Users\Lukas\Source\Repos\Concept-Keuze\Domain\bin\Debug\CK.BL.Domain.dll
+C:\Users\Lukas\Source\Repos\Concept-Keuze\Domain\bin\Debug\CK.BL.Domain.pdb
+C:\Users\Lukas\Source\Repos\Concept-Keuze\Domain\obj\Debug\CK.BL.Domain.dll
+C:\Users\Lukas\Source\Repos\Concept-Keuze\Domain\obj\Debug\CK.BL.Domain.pdb
