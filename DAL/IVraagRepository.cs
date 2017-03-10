@@ -15,8 +15,22 @@ namespace CK.DAL
         Vraag MaakVraag(Vraag vraag);
         Vraag LeesVraag(int vraagNummer);
         void UpdateVraag(Vraag vraag);
-        void UpdateVraagEindCond(int vraagNummer);
         void VerwijderVraag(int vraagNummer);
         #endregion
+
+        #region Gevolg
+        Gevolg maakGevolg(Gevolg gevolg);
+        Gevolg LeesGevolg(int gevolgNummer);
+        void UpdateGevolg(Gevolg gevolg);
+        void verwijderGevolg(int gevolgNummer);
+        #endregion
+
+        #region Keuze
+        Keuze MaakKeuze(Keuze keuze);
+        Keuze LeesKeuze(int keuzeNummer);
+        void UpdateKeuze(Keuze keuze);
+        void verwijderKeuze(int keuzeNummer);
+        #endregion
+
     }
 }

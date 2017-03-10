@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace CK.BL.Domain
 {
-    public class Antwoord
+    public class Keuze
     {
-        public int AntwoordNummer { get; set; }
-        public string AntwoordTekst { get; set; }
+        public int KeuzeNummer { get; set; }
+        public string KeuzeTekst { get; set; }
         public ICollection<Voordeel> Voordelen { get; set; }
         public ICollection<Nadeel> Nadelen { get; set; }
-        public ICollection<Resultaat> Resultaten { get; set; }
+        public ICollection<Gevolg> Resultaten { get; set; }
 
     }
 }
