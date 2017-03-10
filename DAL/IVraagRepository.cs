@@ -16,7 +16,7 @@ namespace CK.DAL
         Vraag LeesVraag(int vraagNummer);
         void UpdateVraag(Vraag vraag);
         void UpdateVraagEindCond(int vraagNummer);
-        void VerwijderVraag(int vraagNummer)
+        void VerwijderVraag(int vraagNummer);
         #endregion
     }
 }
