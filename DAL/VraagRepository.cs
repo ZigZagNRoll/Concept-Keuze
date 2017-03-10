@@ -9,6 +9,26 @@ namespace CK.DAL
 {
     public class VraagRepository : IVraagRepository
     {
+        public Vraag GetKeuzeVraag(int vraagNummer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Vraag> GetKeuzeVragen()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Vraag GetPersoonVraag(int vraagNummer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Vraag> GetPersoonVragen()
+        {
+            throw new NotImplementedException();
+        }
+
         public Gevolg LeesGevolg(int gevolgNummer)
         {
             throw new NotImplementedException();

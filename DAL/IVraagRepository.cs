@@ -32,5 +32,11 @@ namespace CK.DAL
         void verwijderKeuze(int keuzeNummer);
         #endregion
 
+        #region Verhaallijn
+        IEnumerable<Vraag> GetPersoonVragen();
+        Vraag GetPersoonVraag(int vraagNummer);
+        IEnumerable<Vraag> GetKeuzeVragen();
+        Vraag GetKeuzeVraag(int vraagNummer);
+        #endregion
     }
 }

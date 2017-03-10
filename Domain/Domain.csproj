@@ -40,11 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums.cs" />
+    <Compile Include="Informatie.cs" />
     <Compile Include="Keuze.cs" />
     <Compile Include="Nadeel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Gevolg.cs" />
     <Compile Include="Resultaat.cs" />
+    <Compile Include="Verhaallijn.cs" />
     <Compile Include="Voordeel.cs" />
     <Compile Include="Vraag.cs" />
   </ItemGroup>

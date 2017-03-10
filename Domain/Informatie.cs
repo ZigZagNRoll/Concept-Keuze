@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace CK.BL.Domain
 {
-    public class Resultaat
+    class Informatie
     {
-        public int ResultaatNummer { get; set; }
         public bool Geslacht { get; set; }
         public int Kinderen { get; set; }
         public bool Werk { get; set; }
         public EnumWoonplaats Woonplaats { get; set; }
         public EnumLeeftijd Leeftijd { get; set; }
+
     }
 }

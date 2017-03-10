@@ -12,6 +12,6 @@ namespace CK.BL.Domain
         public string GevolgTekst { get; set; }
         public decimal Kans { get; set; }
         public bool EindConditie { get; set; }
-
+        public int VolgendeVraagNummer { get; set; }
     }
 }
