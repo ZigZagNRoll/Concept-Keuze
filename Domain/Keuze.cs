@@ -12,7 +12,7 @@ namespace CK.BL.Domain
         public string KeuzeTekst { get; set; }
         public ICollection<Voordeel> Voordelen { get; set; }
         public ICollection<Nadeel> Nadelen { get; set; }
-        public ICollection<Gevolg> Resultaten { get; set; }
+        public ICollection<Gevolg> Gevolgen { get; set; }
 
     }
 }

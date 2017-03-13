@@ -53,10 +53,143 @@ namespace CK.DAL
             };
             vr1.Antwoorden.Add(k1);
             vr1.Antwoorden.Add(k2);
-            v1.Vragenlijst.Add(vr1);
+            v1.Persoonvragen.Add(vr1);
             antwoorden.Add(k1);
             antwoorden.Add(k2);
             persoonVragen.Add(vr1);
+
+            Vraag vr2 = new Vraag()
+            {
+                VraagNummer = 2,
+                VraagTekst = "U staat op het punt een huis te kopen, waar wilt u gaan wonen?",
+                Antwoorden = new List<Keuze>()
+            };
+
+            Keuze k3 = new Keuze()
+            {
+                KeuzeNummer = 3,
+                KeuzeTekst = "Platteland",
+                Voordelen = new List<Voordeel>(),
+                Nadelen = new List<Nadeel>(),
+                Gevolgen = new List<Gevolg>()
+            };
+
+            Voordeel vrdl1 = new Voordeel()
+            {
+                VoordeelNummer = 1,
+                VoordeelTekst = "Goedkoper"
+            };
+
+            Voordeel vrdl2 = new Voordeel()
+            {
+                VoordeelNummer = 2,
+                VoordeelTekst = "Minder druk"
+            };
+
+            Nadeel nadl1 = new Nadeel()
+            {
+                NadeelNummer = 1,
+                NadeelTekst = "Minder bereikbaar"
+            };
+
+            Nadeel nadl2 = new Nadeel()
+            {
+                NadeelNummer = 2,
+                NadeelTekst = "Minder werkgelegenheid"
+            };
+
+            Gevolg gvlg1 = new Gevolg()
+            {
+                GevolgNummer = 1,
+                GevolgTekst = "U verongelukt tijdens de verbouwingen.",
+                eindtekst = "In het ziekenhuis overlijd u aan uw verwondingen",
+                EindConditie = true,
+                Kans = 0.3,
+                VolgendeVraagNummer = 0
+            };
+
+            Gevolg gvlg2 = new Gevolg()
+            {
+                GevolgNummer = 2,
+                GevolgTekst = "U koopt een mooie villa voor een spot prijsje",
+                eindtekst = "U leeft nog lang en gelukkig",
+                EindConditie = true,
+                Kans = 0.6,
+                VolgendeVraagNummer = 0
+            };
+
+            k3.Voordelen.Add(vrdl1);
+            k3.Voordelen.Add(vrdl2);
+            k3.Nadelen.Add(nadl1);
+            k3.Nadelen.Add(nadl2);
+            k3.Gevolgen.Add(gvlg1);
+            k3.Gevolgen.Add(gvlg2);
+            vr2.Antwoorden.Add(k3);
+
+
+            Keuze k4 = new Keuze()
+            {
+                KeuzeNummer = 4,
+                KeuzeTekst = "Stad",
+                Voordelen = new List<Voordeel>(),
+                Nadelen = new List<Nadeel>(),
+                Gevolgen = new List<Gevolg>()
+            };
+
+            Voordeel vrdl3 = new Voordeel()
+            {
+                VoordeelNummer = 3,
+                VoordeelTekst = "Bereikbaarheid"
+            };
+
+            Voordeel vrdl4 = new Voordeel()
+            {
+                VoordeelNummer = 4,
+                VoordeelTekst = "Werk mogelijkheid"
+            };
+
+            Nadeel nadl3 = new Nadeel()
+            {
+                NadeelNummer = 3,
+                NadeelTekst = "Druk"
+            };
+
+            Nadeel nadl4 = new Nadeel()
+            {
+                NadeelNummer = 4,
+                NadeelTekst = "Minder veilig"
+            };
+
+            Gevolg gvlg3 = new Gevolg()
+            {
+                GevolgNummer = 3,
+                GevolgTekst = "U vind een klein appartementje dat juist groot genoeg is",
+                eindtekst = "",
+                EindConditie = false,
+                Kans = 0.6,
+                VolgendeVraagNummer = 1
+            };
+
+            Gevolg gvlg4 = new Gevolg()
+            {
+                GevolgNummer = 4,
+                GevolgTekst = "U vind niet direct een woning en bent genoodzaakt om op hotel te gaan",
+                eindtekst = "",
+                EindConditie = false,
+                Kans = 0.4,
+                VolgendeVraagNummer = 1
+            };
+            k4.Voordelen.Add(vrdl3);
+            k4.Voordelen.Add(vrdl4);
+            k4.Nadelen.Add(nadl3);
+            k4.Nadelen.Add(nadl4);
+            k4.Gevolgen.Add(gvlg3);
+            k4.Gevolgen.Add(gvlg4);
+            vr2.Antwoorden.Add(k4);
+            v1.Vragenlijst.Add(vr2);
+            keuzeVragen.Add(vr2);
+            antwoorden.Add(k3);
+            antwoorden.Add(k4);
         }
 
         public Vraag GetKeuzeVraag(int vraagNummer)

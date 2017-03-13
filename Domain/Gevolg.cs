@@ -10,8 +10,9 @@ namespace CK.BL.Domain
     {
         public int GevolgNummer { get; set; }
         public string GevolgTekst { get; set; }
-        public decimal Kans { get; set; }
+        public double Kans { get; set; }
         public bool EindConditie { get; set; }
         public int VolgendeVraagNummer { get; set; }
+        public string eindtekst { get; set; }
     }
 }
