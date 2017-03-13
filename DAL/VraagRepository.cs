@@ -9,24 +9,69 @@ namespace CK.DAL
 {
     public class VraagRepository : IVraagRepository
     {
+        private List<Verhaallijn> verhaallijnen;
+        private List<Vraag> persoonVragen;
+        private List<Vraag> keuzeVragen;
+        public VraagRepository()
+        {
+            Seed();
+        }
+
+        private void Seed()
+        {
+            verhaallijnen = new List<Verhaallijn>();
+            persoonVragen = new List<Vraag>();
+            keuzeVragen = new List<Vraag>();
+
+            Verhaallijn v1 = new Verhaallijn()
+            {
+                VerhaallijnNummer = 1,
+                Vragenlijst = new List<Vraag>(),
+                Persoonvragen = new List<Vraag>()
+            };
+            verhaallijnen.Add(v1);
+
+            Vraag vr1 = new Vraag()
+            {
+                VraagNummer = 1,
+                VraagTekst = "Bent u een man of vrouw?",
+                Antwoorden = new List<Keuze>()
+            };
+            Keuze k1 = new Keuze()
+            {
+                KeuzeNummer = 1,
+                KeuzeTekst = "Man"
+            };
+
+            Keuze k2 = new Keuze()
+            {
+                KeuzeNummer = 2,
+                KeuzeTekst = "Vrouw"
+            };
+            vr1.Antwoorden.Add(k1);
+            vr1.Antwoorden.Add(k2);
+            v1.Vragenlijst.Add(vr1);
+            persoonVragen.Add(vr1);
+        }
+
         public Vraag GetKeuzeVraag(int vraagNummer)
         {
-            throw new NotImplementedException();
+            return keuzeVragen.Find(v => v.VraagNummer == vraagNummer);
         }
 
         public IEnumerable<Vraag> GetKeuzeVragen()
         {
-            throw new NotImplementedException();
+            return keuzeVragen;
         }
 
         public Vraag GetPersoonVraag(int vraagNummer)
         {
-            throw new NotImplementedException();
+            return persoonVragen.Find(v => v.VraagNummer == vraagNummer);
         }
 
         public IEnumerable<Vraag> GetPersoonVragen()
         {
-            throw new NotImplementedException();
+            return persoonVragen;
         }
 
         public Gevolg LeesGevolg(int gevolgNummer)
