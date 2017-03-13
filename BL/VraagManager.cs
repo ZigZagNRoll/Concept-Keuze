@@ -3,12 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using CK.BL.Domain;
+using CK.DAL;
 
 namespace CK.BL
 {
     public class VraagManager : IVraagManager
     {
+        private readonly IVraagRepository repo;
+
+        public VraagManager()
+        {
+            repo = new VraagRepository();
+        }
+
         public void GeefGevolg(Gevolg gevolg)
         {
             throw new NotImplementedException();
@@ -36,7 +45,7 @@ namespace CK.BL
 
         public IEnumerable<Vraag> GetKeuzeVragen()
         {
-            throw new NotImplementedException();
+            return repo.GetKeuzeVragen();
         }
 
         public Vraag GetPersoonVraag(int vraagNummer)
@@ -46,7 +55,7 @@ namespace CK.BL
 
         public IEnumerable<Vraag> GetPersoonVragen()
         {
-            throw new NotImplementedException();
+            return repo.GetPersoonVragen();
         }
 
         public Gevolg maakGevolg(int gevolgNummer, string gevolgTekst, decimal kans, bool eindConditie)

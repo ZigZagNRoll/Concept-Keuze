@@ -88,11 +88,11 @@ namespace CK.UI_CA
             Console.WriteLine();
             foreach (Vraag vraag in mgr.GetPersoonVragen())
             {
-                Console.WriteLine("%1. %2", vraag.VraagNummer, vraag.VraagTekst);
+                Console.WriteLine("{0}. {1}", vraag.VraagNummer, vraag.VraagTekst);
             }
             foreach (Vraag vraag in mgr.GetKeuzeVragen())
             {
-                Console.WriteLine("%1. %2", vraag.VraagNummer, vraag.VraagTekst);
+                Console.WriteLine("{0}. {1}", vraag.VraagNummer, vraag.VraagTekst);
             }
         }
     }

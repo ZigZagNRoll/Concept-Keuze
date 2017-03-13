@@ -1,6 +1,12 @@
-C:\Users\Lukas\Source\Repos\Concept-Keuze\UI-CA\bin\Debug\UI-CA.exe.config
-C:\Users\Lukas\Source\Repos\Concept-Keuze\UI-CA\bin\Debug\UI-CA.exe
-C:\Users\Lukas\Source\Repos\Concept-Keuze\UI-CA\bin\Debug\UI-CA.pdb
-C:\Users\Lukas\Source\Repos\Concept-Keuze\UI-CA\obj\Debug\UI-CA.exe
-C:\Users\Lukas\Source\Repos\Concept-Keuze\UI-CA\obj\Debug\UI-CA.pdb
 C:\Users\Lukas\Source\Repos\Concept-Keuze\UI-CA\bin\Debug\CK.UI-CA.exe.config
+C:\Users\Lukas\Source\Repos\Concept-Keuze\UI-CA\bin\Debug\CK.UI-CA.exe
+C:\Users\Lukas\Source\Repos\Concept-Keuze\UI-CA\bin\Debug\CK.UI-CA.pdb
+C:\Users\Lukas\Source\Repos\Concept-Keuze\UI-CA\bin\Debug\CK.BL.dll
+C:\Users\Lukas\Source\Repos\Concept-Keuze\UI-CA\bin\Debug\CK.BL.Domain.dll
+C:\Users\Lukas\Source\Repos\Concept-Keuze\UI-CA\bin\Debug\CK.DAL.dll
+C:\Users\Lukas\Source\Repos\Concept-Keuze\UI-CA\bin\Debug\CK.BL.pdb
+C:\Users\Lukas\Source\Repos\Concept-Keuze\UI-CA\bin\Debug\CK.BL.Domain.pdb
+C:\Users\Lukas\Source\Repos\Concept-Keuze\UI-CA\bin\Debug\CK.DAL.pdb
+C:\Users\Lukas\Source\Repos\Concept-Keuze\UI-CA\obj\Debug\UI-CA.csprojResolveAssemblyReference.cache
+C:\Users\Lukas\Source\Repos\Concept-Keuze\UI-CA\obj\Debug\CK.UI-CA.exe
+C:\Users\Lukas\Source\Repos\Concept-Keuze\UI-CA\obj\Debug\CK.UI-CA.pdb

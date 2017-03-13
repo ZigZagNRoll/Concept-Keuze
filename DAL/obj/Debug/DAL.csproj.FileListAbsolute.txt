@@ -1,0 +1,7 @@
+C:\Users\Lukas\Source\Repos\Concept-Keuze\DAL\bin\Debug\CK.DAL.dll
+C:\Users\Lukas\Source\Repos\Concept-Keuze\DAL\bin\Debug\CK.DAL.pdb
+C:\Users\Lukas\Source\Repos\Concept-Keuze\DAL\bin\Debug\CK.BL.Domain.dll
+C:\Users\Lukas\Source\Repos\Concept-Keuze\DAL\bin\Debug\CK.BL.Domain.pdb
+C:\Users\Lukas\Source\Repos\Concept-Keuze\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Lukas\Source\Repos\Concept-Keuze\DAL\obj\Debug\CK.DAL.dll
+C:\Users\Lukas\Source\Repos\Concept-Keuze\DAL\obj\Debug\CK.DAL.pdb
