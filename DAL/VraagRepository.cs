@@ -12,6 +12,8 @@ namespace CK.DAL
         private List<Verhaallijn> verhaallijnen;
         private List<Vraag> persoonVragen;
         private List<Vraag> keuzeVragen;
+        private List<Keuze> antwoorden;
+
         public VraagRepository()
         {
             Seed();
@@ -22,6 +24,7 @@ namespace CK.DAL
             verhaallijnen = new List<Verhaallijn>();
             persoonVragen = new List<Vraag>();
             keuzeVragen = new List<Vraag>();
+            antwoorden = new List<Keuze>();
 
             Verhaallijn v1 = new Verhaallijn()
             {
@@ -51,6 +54,8 @@ namespace CK.DAL
             vr1.Antwoorden.Add(k1);
             vr1.Antwoorden.Add(k2);
             v1.Vragenlijst.Add(vr1);
+            antwoorden.Add(k1);
+            antwoorden.Add(k2);
             persoonVragen.Add(vr1);
         }
 
@@ -137,6 +142,11 @@ namespace CK.DAL
         public void VerwijderVraag(int vraagNummer)
         {
             throw new NotImplementedException();
+        }
+
+        public IEnumerable<Keuze> LeesKeuzes()
+        {
+            return antwoorden;
         }
     }
 }

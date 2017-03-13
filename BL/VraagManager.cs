@@ -80,7 +80,7 @@ namespace CK.BL
 
         public IEnumerable<Keuze> ToonAntwoorden()
         {
-            throw new NotImplementedException();
+            return repo.LeesKeuzes();
         }
 
         public Gevolg ToonGevolg(int gevolgNummer)

@@ -61,9 +61,9 @@ namespace CK.UI_CA
                     {
                         case 1:
                             ToonAlleVragen(); break;
-                        /*case 2:
+                        case 2:
                             ToonAlleKeuzes(); break;
-                        case 3:
+                        /*case 3:
                             ToonAlleVragenVerhaallijn(); break;
                         case 4:
                             MaakNieuweVerhaallijn(); break;
@@ -93,6 +93,15 @@ namespace CK.UI_CA
             foreach (Vraag vraag in mgr.GetKeuzeVragen())
             {
                 Console.WriteLine("{0}. {1}", vraag.VraagNummer, vraag.VraagTekst);
+            }
+        }
+
+        public static void ToonAlleKeuzes()
+        {
+            Console.WriteLine();
+            foreach (Keuze keus in mgr.ToonAntwoorden())
+            {
+                Console.WriteLine("{0}. {1}", keus.KeuzeNummer, keus.KeuzeTekst);
             }
         }
     }

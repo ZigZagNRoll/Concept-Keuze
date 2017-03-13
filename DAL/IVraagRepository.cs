@@ -28,6 +28,7 @@ namespace CK.DAL
         #region Keuze
         Keuze MaakKeuze(Keuze keuze);
         Keuze LeesKeuze(int keuzeNummer);
+        IEnumerable<Keuze> LeesKeuzes();
         void UpdateKeuze(Keuze keuze);
         void verwijderKeuze(int keuzeNummer);
         #endregion
