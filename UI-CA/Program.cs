@@ -4,11 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UI_CA
+using CK.BL;
+using CK.BL.Domain;
+
+namespace CK.UI_CA
 {
     class Program
     {
         private static bool quit = false;
+        private static readonly IVraagManager mgr = new VraagManager();
 
         static void Main(string[] args)
         {
@@ -55,9 +59,9 @@ namespace UI_CA
                 {
                     switch (action)
                     {
-                        /*case 1:
+                        case 1:
                             ToonAlleVragen(); break;
-                        case 2:
+                        /*case 2:
                             ToonAlleKeuzes(); break;
                         case 3:
                             ToonAlleVragenVerhaallijn(); break;
@@ -77,6 +81,19 @@ namespace UI_CA
                     }
                 }
             } while (inValidAction);
+        }
+
+        public static void ToonAlleVragen()
+        {
+            Console.WriteLine();
+            foreach (Vraag vraag in mgr.GetPersoonVragen())
+            {
+                Console.WriteLine("%1. %2", vraag.VraagNummer, vraag.VraagTekst);
+            }
+            foreach (Vraag vraag in mgr.GetKeuzeVragen())
+            {
+                Console.WriteLine("%1. %2", vraag.VraagNummer, vraag.VraagTekst);
+            }
         }
     }
 }

@@ -3,3 +3,4 @@ C:\Users\Lukas\Source\Repos\Concept-Keuze\UI-CA\bin\Debug\UI-CA.exe
 C:\Users\Lukas\Source\Repos\Concept-Keuze\UI-CA\bin\Debug\UI-CA.pdb
 C:\Users\Lukas\Source\Repos\Concept-Keuze\UI-CA\obj\Debug\UI-CA.exe
 C:\Users\Lukas\Source\Repos\Concept-Keuze\UI-CA\obj\Debug\UI-CA.pdb
+C:\Users\Lukas\Source\Repos\Concept-Keuze\UI-CA\bin\Debug\CK.UI-CA.exe.config
