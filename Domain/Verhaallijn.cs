@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace CK.BL.Domain
 {
-    class Verhaallijn
+    public class Verhaallijn
     {
         public int VerhaallijnNummer { get; set; }
-        public IEnumerable<Vraag> Vragenlijst { get; set; }
-        public IEnumerable<Vraag> Persoonvragen { get; set; }
+        public ICollection<Vraag> Vragenlijst { get; set; }
+        public ICollection<Vraag> Persoonvragen { get; set; }
     }
 }
