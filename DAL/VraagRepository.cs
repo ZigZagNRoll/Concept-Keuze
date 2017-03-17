@@ -167,7 +167,7 @@ namespace CK.DAL
                 eindtekst = "",
                 EindConditie = false,
                 Kans = 0.6,
-                VolgendeVraagNummer = 1
+                VolgendeVraagNummer = 2
             };
 
             Gevolg gvlg4 = new Gevolg()
@@ -177,7 +177,7 @@ namespace CK.DAL
                 eindtekst = "",
                 EindConditie = false,
                 Kans = 0.4,
-                VolgendeVraagNummer = 1
+                VolgendeVraagNummer = 2
             };
             k4.Voordelen.Add(vrdl3);
             k4.Voordelen.Add(vrdl4);
@@ -279,7 +279,60 @@ namespace CK.DAL
 
         public IEnumerable<Keuze> LeesKeuzes()
         {
-            return antwoorden;
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Vraag> GetVerhlPersoonVragen(int verhlId)
+        {
+            IEnumerable<Vraag> verhaal = null;
+            foreach (Verhaallijn story in verhaallijnen)
+            {
+                if (story.VerhaallijnNummer == verhlId)
+                {
+                    verhaal = story.Persoonvragen;
+                }
+            }
+            return verhaal;
+        }
+
+        public Vraag GetVerhlPersoonVraag(int verhlId, int vraagNummer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Vraag> GetverhlKeuzeVragen(int verhId)
+        {
+            IEnumerable<Vraag> verhaal = null;
+            foreach(Verhaallijn story in verhaallijnen)
+            {
+                if (story.VerhaallijnNummer == verhId)
+                {
+                    verhaal = story.Vragenlijst;
+                }
+            }
+            return verhaal;
+        }
+
+        public Vraag GetverhlKeuzeVraag(int verhlId, int vraagNummer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Vraag MaakPersoonVraag(Vraag persoonVraag, int storyId)
+        {
+            foreach(Verhaallijn story in verhaallijnen)
+            {
+                if(story.VerhaallijnNummer == storyId)
+                {
+                    story.Persoonvragen.Add(persoonVraag);
+                }
+            }
+            return persoonVraag;
+        }
+
+        public Vraag MaakKeuzeVraag(Vraag keuzeVraag, int storyId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

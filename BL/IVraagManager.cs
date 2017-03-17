@@ -16,6 +16,7 @@ namespace CK.BL
         void wijzigVraag(Vraag vraag);
         void verwijderVraag(int vraagNummer);
         void GeefKeuze(Keuze keuze);
+        void MaakPersoonVragen(int storyId);
         #endregion
 
         #region Keuze
@@ -39,6 +40,8 @@ namespace CK.BL
         Vraag GetPersoonVraag(int vraagNummer);
         IEnumerable<Vraag> GetKeuzeVragen();
         Vraag GetKeuzevraag(int vraagNummer);
+        IEnumerable<Vraag> GetVragenVerhaallijn(int verhaalId);
+        IEnumerable<Keuze> GetKeuzesVerhaallijnVraag(int verhaalId, int VraagId);
         #endregion
     }
 }

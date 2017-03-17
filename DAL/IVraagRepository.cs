@@ -16,6 +16,11 @@ namespace CK.DAL
         Vraag LeesVraag(int vraagNummer);
         void UpdateVraag(Vraag vraag);
         void VerwijderVraag(int vraagNummer);
+        IEnumerable<Vraag> GetPersoonVragen();
+        Vraag GetPersoonVraag(int vraagNummer);
+        IEnumerable<Vraag> GetKeuzeVragen();
+        Vraag GetKeuzeVraag(int vraagNummer);
+
         #endregion
 
         #region Gevolg
@@ -34,10 +39,12 @@ namespace CK.DAL
         #endregion
 
         #region Verhaallijn
-        IEnumerable<Vraag> GetPersoonVragen();
-        Vraag GetPersoonVraag(int vraagNummer);
-        IEnumerable<Vraag> GetKeuzeVragen();
-        Vraag GetKeuzeVraag(int vraagNummer);
+        IEnumerable<Vraag> GetVerhlPersoonVragen(int verhlId);
+        Vraag GetVerhlPersoonVraag(int verhlId,int vraagNummer);
+        Vraag MaakPersoonVraag(Vraag persoonVraag, int storyId);
+        IEnumerable<Vraag> GetverhlKeuzeVragen(int verhId);
+        Vraag GetverhlKeuzeVraag(int verhlId, int vraagNummer);
+        Vraag MaakKeuzeVraag(Vraag keuzeVraag, int storyId);
         #endregion
     }
 }
