@@ -66,14 +66,14 @@ namespace CK.UI_CA
                             ToonAlleKeuzes(); break;
                         case 3:
                             ToonAlleVragenVerhaallijn(); break;
-                        case 4:
-                            MaakNieuweVerhaallijn(); break;
+                        /*case 4:
+                            MaakNieuweVerhaallijn(); break;*/
                         case 5:
                             ToonAntwoordenVraagVanVerhaallijn(); break;
                         /*case 6:
-                            StartVerhaallijn(); break;*/
+                            StartVerhaallijn(); break;
                         case 7:
-                            MaakPersoonVraag(); break;
+                            MaakPersoonVraag(); break;*/
                         case 0:
                             quit = true;
                             return;
@@ -96,7 +96,7 @@ namespace CK.UI_CA
             string strAantalAntw = Console.ReadLine();
             int aantalAntw;
             if (Int32.TryParse(strAantalAntw, out aantalAntw)) {
-                for (int x =0; x< aantalAntw, x++)
+                for (int x =0; x< aantalAntw; x++)
                 {
                     Console.WriteLine("Antwoord:{0}", x);
                     Console.Write("Het antwoord dat wordt getoont:");
@@ -105,7 +105,7 @@ namespace CK.UI_CA
                 }
             }
 
-            mgr.MaakPersoonVraag(vraag, keuzes);
+            //mgr.MaakPersoonVraag(vraag, keuzes);
         }
 
         private static void MaakNieuweVerhaallijn()

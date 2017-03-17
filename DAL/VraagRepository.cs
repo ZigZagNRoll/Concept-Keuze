@@ -22,9 +22,9 @@ namespace CK.DAL
         private void Seed()
         {
             verhaallijnen = new List<Verhaallijn>();
+            antwoorden = new List<Keuze>();
             persoonVragen = new List<Vraag>();
             keuzeVragen = new List<Vraag>();
-            antwoorden = new List<Keuze>();
 
             Verhaallijn v1 = new Verhaallijn()
             {
@@ -199,7 +199,15 @@ namespace CK.DAL
 
         public IEnumerable<Vraag> GetKeuzeVragen()
         {
-            return keuzeVragen;
+            List<Vraag> lijst = new List<Vraag>();
+            foreach(Verhaallijn lijn in verhaallijnen)
+            {
+                foreach(Vraag vraag in lijn.Vragenlijst)
+                {
+                    lijst.Add(vraag);
+                }
+            }
+            return lijst;   
         }
 
         public Vraag GetPersoonVraag(int vraagNummer)
@@ -279,7 +287,25 @@ namespace CK.DAL
 
         public IEnumerable<Keuze> LeesKeuzes()
         {
-            throw new NotImplementedException();
+            List<Keuze> keuzes = new List<Keuze>();
+            foreach(Verhaallijn verhll in verhaallijnen)
+            {
+                foreach(Vraag pers in verhll.Persoonvragen)
+                {
+                    foreach(Keuze keus in pers.Antwoorden)
+                    {
+                        keuzes.Add(keus);
+                    }
+                }
+                foreach(Vraag vraag in verhll.Vragenlijst)
+                {
+                    foreach(Keuze keus in vraag.Antwoorden)
+                    {
+                        keuzes.Add(keus);
+                    }
+                }
+            }
+            return keuzes;
         }
 
         public IEnumerable<Vraag> GetVerhlPersoonVragen(int verhlId)
