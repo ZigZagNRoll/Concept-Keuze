@@ -31,7 +31,7 @@ namespace CK.DAL
         #endregion
 
         #region Keuze
-        Keuze MaakKeuze(Keuze keuze);
+        Keuze MaakKeuze(Keuze keuze, int vraagid);
         Keuze LeesKeuze(int keuzeNummer);
         IEnumerable<Keuze> LeesKeuzes();
         void UpdateKeuze(Keuze keuze);
@@ -41,10 +41,11 @@ namespace CK.DAL
         #region Verhaallijn
         IEnumerable<Vraag> GetVerhlPersoonVragen(int verhlId);
         Vraag GetVerhlPersoonVraag(int verhlId,int vraagNummer);
-        Vraag MaakPersoonVraag(Vraag persoonVraag, int storyId);
+        Vraag MaakPersoonVraag(string persoonVraag);
         IEnumerable<Vraag> GetverhlKeuzeVragen(int verhId);
         Vraag GetverhlKeuzeVraag(int verhlId, int vraagNummer);
-        Vraag MaakKeuzeVraag(Vraag keuzeVraag, int storyId);
+        Vraag MaakPersoonVraag(Vraag keuzeVraag, int storyId);
+        Verhaallijn GetVerhaalLijn(int id);
         #endregion
     }
 }

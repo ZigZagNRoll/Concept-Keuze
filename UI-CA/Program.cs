@@ -36,16 +36,16 @@ namespace CK.UI_CA
             Console.WriteLine("7: Maak een persoonvraag");
             Console.WriteLine("0: Quit");
 
-            try
-            {
+            //try
+            //{
                 DetectMenuAction();
-            }
+            /*}
             catch (Exception e)
-            {
+            /*{
                 Console.WriteLine();
                 Console.WriteLine("Er heeft zich een onverwachte fout voorgedaan!");
                 Console.WriteLine();
-            }
+            }*/
         }
 
         private static void DetectMenuAction()
@@ -66,14 +66,14 @@ namespace CK.UI_CA
                             ToonAlleKeuzes(); break;
                         case 3:
                             ToonAlleVragenVerhaallijn(); break;
-                        /*case 4:
-                            MaakNieuweVerhaallijn(); break;*/
+                        case 4:
+                            MaakNieuweVerhaallijn(); break;
                         case 5:
                             ToonAntwoordenVraagVanVerhaallijn(); break;
                         /*case 6:
-                            StartVerhaallijn(); break;
+                            StartVerhaallijn(); break;*/
                         case 7:
-                            MaakPersoonVraag(); break;*/
+                            MaakPersoonVraag(); break;
                         case 0:
                             quit = true;
                             return;
@@ -92,6 +92,7 @@ namespace CK.UI_CA
             Console.WriteLine();
             Console.WriteLine("Welke persoonsvraag wilt u stellen?");
             string vraag = Console.ReadLine();
+            int vraagNr = mgr.MaakPersoonVraag(vraag);
             Console.WriteLine("Hoeveel antwoorden zijn er op de vraag");
             string strAantalAntw = Console.ReadLine();
             int aantalAntw;
@@ -101,11 +102,12 @@ namespace CK.UI_CA
                     Console.WriteLine("Antwoord:{0}", x);
                     Console.Write("Het antwoord dat wordt getoont:");
                     string keuzeText = Console.ReadLine();
-                    keuzes.Add(keuzeText);
+                    mgr.MaakPersKeuze(x, keuzeText, vraagNr);
+
                 }
             }
-
-            //mgr.MaakPersoonVraag(vraag, keuzes);
+            mgr.MaakPersoonVraag(vraag);
+            //mgr.MaakPersoonVragen(1);
         }
 
         private static void MaakNieuweVerhaallijn()

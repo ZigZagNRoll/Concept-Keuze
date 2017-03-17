@@ -90,16 +90,32 @@ namespace CK.BL
             throw new NotImplementedException();
         }
 
-        public Keuze MaakKeuze(int keuzeNummer, string keuzeTekst)
+        public Keuze MaakPersKeuze(int keuzeNummer, string keuzeTekst, int vraagId)
         {
-            throw new NotImplementedException();
+            Keuze keus = new Keuze()
+            {
+                KeuzeNummer = keuzeNummer,
+                KeuzeTekst = keuzeTekst
+            };
+            return repo.MaakKeuze(keus, vraagId);
+        }
+
+        public int MaakPersoonVraag(string vraag)
+        {
+            Vraag v = repo.MaakPersoonVraag(vraag);
+            return v.VraagNummer;
+        }
+
+        private Verhaallijn GetVerhaallijn(int id)
+        {
+            return repo.GetVerhaalLijn(id);
         }
 
         public void MaakPersoonVragen(int storyId)
         {
             foreach(Vraag vraag in repo.GetPersoonVragen())
             {
-                repo.MaakKeuzeVraag(vraag, storyId);
+                repo.MaakPersoonVraag(vraag, storyId);
             }
         }
 
@@ -149,6 +165,11 @@ namespace CK.BL
         }
 
         public void zetEindConditie(int gevolgNummer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Keuze MaakKeuze(int keuzeNummer, string keuzeTekst)
         {
             throw new NotImplementedException();
         }

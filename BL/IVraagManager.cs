@@ -23,6 +23,7 @@ namespace CK.BL
         IEnumerable<Keuze> ToonAntwoorden();
         Keuze ToonAntwoord(int keuzeNummer);
         Keuze MaakKeuze(int keuzeNummer, string keuzeTekst);
+        Keuze MaakPersKeuze(int keuzeNummer, string keuzeTekst, int VraagId);
         void GeefVoordeel(Voordeel voordeel);
         void GeefNadeel(Nadeel nadeel);
         void GeefGevolg(Gevolg gevolg);
@@ -42,6 +43,7 @@ namespace CK.BL
         Vraag GetKeuzevraag(int vraagNummer);
         IEnumerable<Vraag> GetVragenVerhaallijn(int verhaalId);
         IEnumerable<Keuze> GetKeuzesVerhaallijnVraag(int verhaalId, int VraagId);
+        int MaakPersoonVraag(string vraag);
         #endregion
     }
 }

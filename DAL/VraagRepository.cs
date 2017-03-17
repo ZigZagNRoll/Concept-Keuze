@@ -190,6 +190,139 @@ namespace CK.DAL
             keuzeVragen.Add(vr2);
             antwoorden.Add(k3);
             antwoorden.Add(k4);
+
+            Vraag vr3 = new Vraag()
+            {
+                VraagNummer = 3,
+                VraagTekst = "U gaat op zoek naar een job?",
+                Antwoorden = new List<Keuze>()
+            };
+
+            Keuze k5 = new Keuze()
+            {
+                KeuzeNummer = 5,
+                KeuzeTekst = "Hoog geplaatst",
+                Voordelen = new List<Voordeel>(),
+                Nadelen = new List<Nadeel>(),
+                Gevolgen = new List<Gevolg>()
+            };
+
+            Voordeel vrdl5 = new Voordeel()
+            {
+                VoordeelNummer = 5,
+                VoordeelTekst = "Beter inkomen"
+            };
+
+            Voordeel vrdl6 = new Voordeel()
+            {
+                VoordeelNummer = 6,
+                VoordeelTekst = "Meer voordelen"
+            };
+
+            Nadeel nadl5 = new Nadeel()
+            {
+                NadeelNummer = 5,
+                NadeelTekst = "Drukker"
+            };
+
+            Nadeel nadl6 = new Nadeel()
+            {
+                NadeelNummer = 6,
+                NadeelTekst = "Kans om werk te vinden is kleiner"
+            };
+
+            Gevolg gvlg5 = new Gevolg()
+            {
+                GevolgNummer = 5,
+                GevolgTekst = "U vind een job als team manager, U verdiend een aardig salaris maar ben zelden thuis",
+                eindtekst = "",
+                EindConditie = false,
+                Kans = 0.2,
+                VolgendeVraagNummer = 3
+            };
+
+            Gevolg gvlg6 = new Gevolg()
+            {
+                GevolgNummer = 6,
+                GevolgTekst = "U blijft op zoek naar een hoog geplaatste job maar vind geen werk plek",
+                eindtekst = "De dop is niet genoeg om de maand mee rond te komen en u verdinkt in de schulden",
+                EindConditie = true,
+                Kans = 0.4,
+                VolgendeVraagNummer = 3
+            };
+
+            k5.Voordelen.Add(vrdl5);
+            k5.Voordelen.Add(vrdl6);
+            k5.Nadelen.Add(nadl5);
+            k5.Nadelen.Add(nadl6);
+            k5.Gevolgen.Add(gvlg5);
+            k5.Gevolgen.Add(gvlg6);
+            vr3.Antwoorden.Add(k5);
+
+
+            Keuze k6 = new Keuze()
+            {
+                KeuzeNummer = 6,
+                KeuzeTekst = "Lage loon job",
+                Voordelen = new List<Voordeel>(),
+                Nadelen = new List<Nadeel>(),
+                Gevolgen = new List<Gevolg>()
+            };
+
+            Voordeel vrdl7 = new Voordeel()
+            {
+                VoordeelNummer = 7,
+                VoordeelTekst = "Gemakkelijk te vinden"
+            };
+
+            Voordeel vrdl8 = new Voordeel()
+            {
+                VoordeelNummer = 8,
+                VoordeelTekst = "Vaste werk uren"
+            };
+
+            Nadeel nadl7 = new Nadeel()
+            {
+                NadeelNummer = 7,
+                NadeelTekst = "Minder inkomen"
+            };
+
+            Nadeel nadl8 = new Nadeel()
+            {
+                NadeelNummer = 8,
+                NadeelTekst = "Weinig kans om te groeien"
+            };
+
+            Gevolg gvlg7 = new Gevolg()
+            {
+                GevolgNummer = 7,
+                GevolgTekst = "U vind snel een job en werkt hard, u wordt gepromoveerd tot manager van een fastfood filiaal",
+                eindtekst = "",
+                EindConditie = false,
+                Kans = 0.4,
+                VolgendeVraagNummer = 2
+            };
+
+            Gevolg gvlg8 = new Gevolg()
+            {
+                GevolgNummer = 8,
+                GevolgTekst = "U vind snel een job en doet middelmatig werk, U verdient genoeg om de maand rond te komen",
+                eindtekst = "",
+                EindConditie = false,
+                Kans = 0.4,
+                VolgendeVraagNummer = 2
+            };
+            k6.Voordelen.Add(vrdl7);
+            k6.Voordelen.Add(vrdl8);
+            k6.Nadelen.Add(nadl7);
+            k6.Nadelen.Add(nadl8);
+            k6.Gevolgen.Add(gvlg7);
+            k6.Gevolgen.Add(gvlg8);
+            vr3.Antwoorden.Add(k6);
+            v1.Vragenlijst.Add(vr3);
+            keuzeVragen.Add(vr3);
+            antwoorden.Add(k5);
+            antwoorden.Add(k6);
         }
 
         public Vraag GetKeuzeVraag(int vraagNummer)
@@ -245,9 +378,13 @@ namespace CK.DAL
             throw new NotImplementedException();
         }
 
-        public Keuze MaakKeuze(Keuze keuze)
+        public Keuze MaakKeuze(Keuze keuze, int vraagId)
         {
-            throw new NotImplementedException();
+            Vraag vraag = this.GetPersoonVraag(vraagId);
+            if (vraag.Antwoorden == null)
+                vraag.Antwoorden = new List<Keuze>();
+            vraag.Antwoorden.Add(keuze);
+            return keuze;
         }
 
         public Vraag MaakVraag(Vraag vraag)
@@ -358,7 +495,30 @@ namespace CK.DAL
 
         public Vraag MaakKeuzeVraag(Vraag keuzeVraag, int storyId)
         {
-            throw new NotImplementedException();
+            foreach(Verhaallijn verhaal in verhaallijnen)
+            {
+                if(verhaal.VerhaallijnNummer == storyId)
+                {
+                    verhaal.Vragenlijst.Add(keuzeVraag);
+                }
+            }
+            return keuzeVraag;
+        }
+
+        public Verhaallijn GetVerhaalLijn(int id)
+        {
+            return verhaallijnen.Find(v => v.VerhaallijnNummer == id);
+        }
+
+        public Vraag MaakPersoonVraag(string persoonVraag)
+        {
+            Vraag vraag = new Vraag()
+            {
+                VraagNummer = persoonVragen.Count() + 1,
+                VraagTekst = persoonVraag
+            };
+            persoonVragen.Add(vraag);
+            return vraag;
         }
     }
 }
