@@ -72,8 +72,6 @@ namespace CK.UI_CA
                             ToonAntwoordenVraagVanVerhaallijn(); break;
                         /*case 6:
                             StartVerhaallijn(); break;*/
-                        case 7:
-                            MaakPersoonVraag(); break;
                         case 0:
                             quit = true;
                             return;
