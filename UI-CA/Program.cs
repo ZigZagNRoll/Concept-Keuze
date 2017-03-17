@@ -33,6 +33,7 @@ namespace CK.UI_CA
             Console.WriteLine("4: Maak een nieuwe verhaallijn");
             Console.WriteLine("5: Toon de antwoorden van een vraag in een verhaallijn");
             Console.WriteLine("6: Speel een verhaallijn");
+            Console.WriteLine("7: Maak een persoonvraag");
             Console.WriteLine("0: Quit");
 
             try
@@ -63,14 +64,16 @@ namespace CK.UI_CA
                             ToonAlleVragen(); break;
                         case 2:
                             ToonAlleKeuzes(); break;
-                        /*case 3:
+                        case 3:
                             ToonAlleVragenVerhaallijn(); break;
-                        case 4:
-                            MaakNieuweVerhaallijn(); break;
+                        /*case 4:
+                            MaakNieuweVerhaallijn(); break;*/
                         case 5:
                             ToonAntwoordenVraagVanVerhaallijn(); break;
-                        case 6:
-                            StartVerhaallijn(); break;*/
+                        /*case 6:
+                            StartVerhaallijn(); break;
+                        case 7:
+                            MaakPersoonVraag(); break;*/
                         case 0:
                             quit = true;
                             return;
@@ -78,6 +81,67 @@ namespace CK.UI_CA
                             Console.WriteLine("Geen geldige keuze!");
                             inValidAction = true;
                             break;
+                    }
+                }
+            } while (inValidAction);
+        }
+
+        private static void MaakPersoonVraag()
+        {
+            List<string> keuzes = null; 
+            Console.WriteLine();
+            Console.WriteLine("Welke persoonsvraag wilt u stellen?");
+            string vraag = Console.ReadLine();
+            Console.WriteLine("Hoeveel antwoorden zijn er op de vraag");
+            string strAantalAntw = Console.ReadLine();
+            int aantalAntw;
+            if (Int32.TryParse(strAantalAntw, out aantalAntw)) {
+                for (int x =0; x< aantalAntw; x++)
+                {
+                    Console.WriteLine("Antwoord:{0}", x);
+                    Console.Write("Het antwoord dat wordt getoont:");
+                    string keuzeText = Console.ReadLine();
+                    keuzes.Add(keuzeText);
+                }
+            }
+
+            //mgr.MaakPersoonVraag(vraag, keuzes);
+        }
+
+        private static void MaakNieuweVerhaallijn()
+        {
+            Console.WriteLine();
+            bool inValidAction = false;
+            do
+            {
+                Console.Write("Verhaallijn: ");
+                string input = Console.ReadLine();
+                int vrhlLijn;
+                if (Int32.TryParse(input, out vrhlLijn))
+                {
+                    mgr.MaakPersoonVragen(vrhlLijn);
+
+                }
+            } while (inValidAction);
+        }
+
+        private static void ToonAntwoordenVraagVanVerhaallijn()
+        {
+            Console.WriteLine();
+            bool inValidAction = false;
+            do
+            {
+                Console.Write("Verhaallijn: ");
+                string input = Console.ReadLine();
+                Console.Write("Vraag:");
+                string input2 = Console.ReadLine();
+                int action, action2;
+                if (Int32.TryParse(input, out action) && Int32.TryParse(input2, out action2))
+                {
+                    Console.WriteLine("De antwoorden voor vraag {0} van verhaallijn {1}", action2,action);
+                    foreach (Keuze v in mgr.GetKeuzesVerhaallijnVraag(action, action2))
+                    {
+                        Console.WriteLine("{0}. {1}", v.KeuzeNummer, v.KeuzeTekst);
                     }
                 }
             } while (inValidAction);
@@ -103,6 +167,28 @@ namespace CK.UI_CA
             {
                 Console.WriteLine("{0}. {1}", keus.KeuzeNummer, keus.KeuzeTekst);
             }
+        }
+
+        public static void ToonAlleVragenVerhaallijn()
+        {
+            Console.WriteLine();
+            bool inValidAction = false;
+            do
+            {
+                Console.Write("Verhaallijn: ");
+                string input = Console.ReadLine();
+                int action;
+                if (Int32.TryParse(input, out action))
+                {
+                    Console.WriteLine("De vragen voor verhaallijn: {0}", action);
+                    foreach(Vraag v in mgr.GetVragenVerhaallijn(action))
+                    {
+                        Console.WriteLine("{0}. {1}", v.VraagNummer, v.VraagTekst);
+                    }
+                }
+            } while (inValidAction);
+
+            
         }
     }
 }

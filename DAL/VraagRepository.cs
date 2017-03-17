@@ -22,9 +22,9 @@ namespace CK.DAL
         private void Seed()
         {
             verhaallijnen = new List<Verhaallijn>();
+            antwoorden = new List<Keuze>();
             persoonVragen = new List<Vraag>();
             keuzeVragen = new List<Vraag>();
-            antwoorden = new List<Keuze>();
 
             Verhaallijn v1 = new Verhaallijn()
             {
@@ -167,7 +167,7 @@ namespace CK.DAL
                 eindtekst = "",
                 EindConditie = false,
                 Kans = 0.6,
-                VolgendeVraagNummer = 1
+                VolgendeVraagNummer = 2
             };
 
             Gevolg gvlg4 = new Gevolg()
@@ -177,7 +177,7 @@ namespace CK.DAL
                 eindtekst = "",
                 EindConditie = false,
                 Kans = 0.4,
-                VolgendeVraagNummer = 1
+                VolgendeVraagNummer = 2
             };
             k4.Voordelen.Add(vrdl3);
             k4.Voordelen.Add(vrdl4);
@@ -199,7 +199,15 @@ namespace CK.DAL
 
         public IEnumerable<Vraag> GetKeuzeVragen()
         {
-            return keuzeVragen;
+            List<Vraag> lijst = new List<Vraag>();
+            foreach(Verhaallijn lijn in verhaallijnen)
+            {
+                foreach(Vraag vraag in lijn.Vragenlijst)
+                {
+                    lijst.Add(vraag);
+                }
+            }
+            return lijst;   
         }
 
         public Vraag GetPersoonVraag(int vraagNummer)
@@ -279,7 +287,78 @@ namespace CK.DAL
 
         public IEnumerable<Keuze> LeesKeuzes()
         {
-            return antwoorden;
+            List<Keuze> keuzes = new List<Keuze>();
+            foreach(Verhaallijn verhll in verhaallijnen)
+            {
+                foreach(Vraag pers in verhll.Persoonvragen)
+                {
+                    foreach(Keuze keus in pers.Antwoorden)
+                    {
+                        keuzes.Add(keus);
+                    }
+                }
+                foreach(Vraag vraag in verhll.Vragenlijst)
+                {
+                    foreach(Keuze keus in vraag.Antwoorden)
+                    {
+                        keuzes.Add(keus);
+                    }
+                }
+            }
+            return keuzes;
+        }
+
+        public IEnumerable<Vraag> GetVerhlPersoonVragen(int verhlId)
+        {
+            IEnumerable<Vraag> verhaal = null;
+            foreach (Verhaallijn story in verhaallijnen)
+            {
+                if (story.VerhaallijnNummer == verhlId)
+                {
+                    verhaal = story.Persoonvragen;
+                }
+            }
+            return verhaal;
+        }
+
+        public Vraag GetVerhlPersoonVraag(int verhlId, int vraagNummer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Vraag> GetverhlKeuzeVragen(int verhId)
+        {
+            IEnumerable<Vraag> verhaal = null;
+            foreach(Verhaallijn story in verhaallijnen)
+            {
+                if (story.VerhaallijnNummer == verhId)
+                {
+                    verhaal = story.Vragenlijst;
+                }
+            }
+            return verhaal;
+        }
+
+        public Vraag GetverhlKeuzeVraag(int verhlId, int vraagNummer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Vraag MaakPersoonVraag(Vraag persoonVraag, int storyId)
+        {
+            foreach(Verhaallijn story in verhaallijnen)
+            {
+                if(story.VerhaallijnNummer == storyId)
+                {
+                    story.Persoonvragen.Add(persoonVraag);
+                }
+            }
+            return persoonVraag;
+        }
+
+        public Vraag MaakKeuzeVraag(Vraag keuzeVraag, int storyId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -38,6 +38,23 @@ namespace CK.BL
             throw new NotImplementedException();
         }
 
+        public IEnumerable<Keuze> GetKeuzesVerhaallijnVraag(int verhaalId, int VraagId)
+        {
+            IEnumerable<Vraag> persvragen = repo.GetVerhlPersoonVragen(verhaalId);
+            IEnumerable<Vraag> keuzevragen = repo.GetverhlKeuzeVragen(verhaalId);
+            var vragen = persvragen.Concat(keuzevragen);
+            IEnumerable<Keuze> keuzes = null;
+
+            foreach(Vraag vraag in vragen)
+            {
+                if(vraag.VraagNummer == VraagId)
+                {
+                    keuzes = vraag.Antwoorden;
+                }
+            }
+            return keuzes;
+        }
+
         public Vraag GetKeuzevraag(int vraagNummer)
         {
             throw new NotImplementedException();
@@ -58,6 +75,16 @@ namespace CK.BL
             return repo.GetPersoonVragen();
         }
 
+        public IEnumerable<Vraag> GetVragenVerhaallijn(int verhaalId)
+        {
+            IEnumerable<Vraag> persvragen = repo.GetVerhlPersoonVragen(verhaalId);
+            IEnumerable<Vraag> keuzevragen = repo.GetverhlKeuzeVragen(verhaalId);
+            var vragen = persvragen.Concat(keuzevragen);
+
+            return vragen;
+
+        }
+
         public Gevolg maakGevolg(int gevolgNummer, string gevolgTekst, decimal kans, bool eindConditie)
         {
             throw new NotImplementedException();
@@ -66,6 +93,14 @@ namespace CK.BL
         public Keuze MaakKeuze(int keuzeNummer, string keuzeTekst)
         {
             throw new NotImplementedException();
+        }
+
+        public void MaakPersoonVragen(int storyId)
+        {
+            foreach(Vraag vraag in repo.GetPersoonVragen())
+            {
+                repo.MaakKeuzeVraag(vraag, storyId);
+            }
         }
 
         public Vraag MaakVraag(int vraagNummer, string vraagTekst)

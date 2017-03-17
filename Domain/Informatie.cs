@@ -11,8 +11,8 @@ namespace CK.BL.Domain
         public bool Geslacht { get; set; }
         public int Kinderen { get; set; }
         public bool Werk { get; set; }
-        public EnumWoonplaats Woonplaats { get; set; }
-        public EnumLeeftijd Leeftijd { get; set; }
+        public string Woonplaats { get; set; }
+        public int Leeftijd { get; set; }
 
     }
 }
